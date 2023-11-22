@@ -27,21 +27,19 @@ public class Main {
     public static void task2() {
         int[] arr = generateRandomArray();
         int maxWastes = 0;
-        int minWastes = -1;
-        for (int i = 0; i < arr.length; i++) {
+        int minWastes = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
             final int sum = arr[i];
             if (sum > maxWastes) {
                 maxWastes = sum;
             }
-        }
-        System.out.println("Максимальная сумма трат за день составила " + maxWastes + " рублей");
-        for (int i = 0; i < arr.length - 1; i++) {
             final int summ = arr[i];
             final int summN = arr[i + 1];
             if (summ < summN) {
                 minWastes = summ;
             }
         }
+        System.out.println("Максимальная сумма трат за день составила " + maxWastes + " рублей");
         System.out.println("Минимальная сумма трат за день составила " + minWastes + " рублей");
     }
 
