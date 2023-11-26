@@ -26,23 +26,20 @@ public class Main {
 
     public static void task2() {
         int[] arr = generateRandomArray();
-        int maxWastes = 0;
-        int minWastes = 0;
-        for (int i = 0; i < arr.length - 1; i++) {
+        int maxWastes = arr[0];
+        int minWastes = arr[0];
+        for (int i = 0; i < arr.length; i++) {
             final int sum = arr[i];
             if (sum > maxWastes) {
                 maxWastes = sum;
-            }
-            final int summ = arr[i];
-            final int summN = arr[i + 1];
-            if (summ < summN) {
-                minWastes = summ;
+                if (sum < maxWastes) {
+                    minWastes = sum;
+                }
+                    System.out.println("Максимальная сумма трат за день составила " + maxWastes + " рублей");
+                    System.out.println("Минимальная сумма трат за день составила " + minWastes + " рублей");
             }
         }
-        System.out.println("Максимальная сумма трат за день составила " + maxWastes + " рублей");
-        System.out.println("Минимальная сумма трат за день составила " + minWastes + " рублей");
     }
-
         public static void task3() {
         int[] arr = generateRandomArray();
         int sum = 0;
